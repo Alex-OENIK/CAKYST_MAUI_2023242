@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SemesterProject.GUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SemesterProject.GUI"
+    Shell.FlyoutBehavior="Flyout"
+    Title="SemesterProject.GUI">
+
+    <FlyoutItem Title="CRUD">
+        <ShellContent
+        Title="CRUD"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="mainpage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Query">
+        <ShellContent
+    Title="Query"
+    ContentTemplate="{DataTemplate local:QueryPage}"
+    Route="querypage" />
+    </FlyoutItem>
+
+</Shell>

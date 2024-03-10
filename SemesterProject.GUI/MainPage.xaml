@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemesterProject.GUI.MainPage"
+             xmlns:model="clr-namespace:SemesterProject.Models;assembly=SemesterProject.Models"
+             xmlns:vm="clr-namespace:SemesterProject.GUI.ViewModels"
+             x:DataType="vm:MainPageViewModel"
+             Title="{Binding Title}">
+
+    <Grid WidthRequest="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Margin="10">
+                <CollectionView ItemsSource="{Binding Movies}" SelectionMode="Single" SelectedItem="{Binding SelectedMovie}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Movie">
+                            <Frame BackgroundColor="AntiqueWhite">
+                                <VerticalStackLayout VerticalOptions="Center" Padding="5">
+                                    <Label FontSize="Medium" Text="{Binding Title}"/>
+                                    <Label FontSize="Small" Text="{Binding Director, StringFormat='Directed by: {0}'}"/>
+                                    <Label FontSize="Small" Text="{Binding ReleaseYear}"/>
+                                    <Label FontSize="Small" Text="{Binding Rating, StringFormat='Rotten Tomatoes: {0}%'}"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <VerticalStackLayout Grid.Row="1" Spacing="10" Margin="10">
+            <Button Text="New" Command="{Binding CreateCommand}"/>
+            <Button Text="Edit" Command="{Binding UpdateCommand}"/>
+            <Button Text="Delete" Command="{Binding DeleteCommand}"/>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

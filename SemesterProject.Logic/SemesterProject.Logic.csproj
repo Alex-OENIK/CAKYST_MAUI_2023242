@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SemesterProject.Models\SemesterProject.Models.csproj" />
+    <ProjectReference Include="..\SemesterProject.Repository\SemesterProject.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

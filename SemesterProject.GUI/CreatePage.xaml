@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemesterProject.GUI.CreatePage"
+             xmlns:model="clr-namespace:SemesterProject.Models;assembly=SemesterProject.Models"
+             xmlns:vm="clr-namespace:SemesterProject.GUI.ViewModels"
+             x:DataType="vm:CreatePageViewModel"
+             Title="{Binding Title}">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10" Margin="10" WidthRequest="400">
+        <Label Text="Title"/>
+        <Entry Text="{Binding NewMovieTitle}"/>
+        <Label Text="Director"/>
+        <Entry Text="{Binding NewMovieDirector}"/>
+        <Label Text="Year of Release"/>
+        <Entry Text="{Binding NewMovieReleaseYear}" Keyboard="Numeric"/>
+        <Label Text="Rating"/>
+        <Entry Text="{Binding NewMovieRating}" Keyboard="Numeric"/>
+        <Button Text="Add" Command="{Binding CreateCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>
